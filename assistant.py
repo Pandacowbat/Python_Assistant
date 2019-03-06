@@ -52,17 +52,24 @@ def search_wikipedia_for_me():
 #WIKIPEDIA FUNCTION ENDS
 
 # ASK QUERY AND CALL FUNCTIONS
-query=input("\nHey Panda. How can I help?\n")
-if "weather" in query:
-    print("Sure, I'll fetch the weather real quick.")
-    weather()
-elif "time" in query:
-    print(datetime.datetime.now())
-elif "joke" in query:
-    joke()
-elif "google" in query:
-    google_it_for_me()
-elif "wikipedia" or "description" in query:
-    search_wikipedia_for_me()
-else:
-    print("Not a valid query.")
+user = "Panda"
+print("Hey "+user)
+while(True):
+    query=input("\nHow can I help?\n")
+    if "weather" in query:
+        print("Sure, I'll fetch the weather real quick.")
+        weather()
+    elif "time" in query:
+        print(datetime.datetime.now())
+    elif "joke" in query:
+        joke()
+    elif "google" in query:
+        google_it_for_me()
+    elif ("wikipedia" or "describe") in query:
+        search_wikipedia_for_me()
+    elif ("exit" or "bye" or "quit") in query:
+        print("Until next time.")
+        break
+    else:
+        print("Not a valid query.")
+print("Exiting...")
